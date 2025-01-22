@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protectores Diarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #FFC0CB; /* Color palo de rosa */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .product-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .product-info img {
+            max-width: 100%;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+        .product-info .details {
+            max-width: 600px;
+        }
+        .product-info .details h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .product-info .details p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .product-info .details .price {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 2rem;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            z-index: 1000;
+        }
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        #cart {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+        #cart-items li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #cart-items li span {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .remove-item {
+            background-color: #FFC0CB;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .remove-item:hover {
+            background-color: #ff9b9b;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .buy-now-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .buy-now-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Mejoras para móvil */
+        @media (max-width: 768px) {
+            .product-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            .product-info .details {
+                max-width: 100%;
+                margin-top: 1rem;
+            }
+            iframe {
+                max-width: 100%;
+                height: 250px;
+            }
+            .buy-now-button {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.2rem;
+            }
+            .back-button {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Protectores Diarios</h1>
+    </header>
+    <div class="container">
+        <div class="product-info">
+            <img src="images/protectores3.png" alt="Protectores Diarios">
+            <div class="details">
+                <h2>Protectores Diarios</h2>
+                <p>¡Cuídate, siéntete cómoda y libre! Nuestros **Protectores Diarios** han sido creados para adaptarse a tu vida diaria con total discreción, brindándote la máxima **sensación de frescura**. ¿Quieres estar segura durante todo el día? ¡Este protector es tu aliado perfecto!</p>
+                <p>Con una **absorción ultrarrápida** y un diseño que favorece el **drenaje vertical**, evitarás cualquier tipo de incomodidad o preocupación. Olvídate de las filtraciones y disfruta de una protección efectiva que te mantendrá **seca y fresca** incluso en los días más largos.</p>
+                <p>Lo mejor de todo es que este protector está hecho con **algodón suave**, pensando en tu comodidad y bienestar, mientras que los **chips de iones negativos** ayudan a equilibrar tu salud íntima, favoreciendo el cuidado y la prevención de inflamaciones ginecológicas. ¡Un verdadero cuidado integral para tu salud femenina!</p>
+                <p><strong>Descripción:</strong></p>
+                <p>Este protector es mucho más que una simple toalla sanitaria. Con su **textura suave de algodón** y su **banda de Turmalina generadora de aniones**, no solo cuida tu piel, sino que también **protege tu bienestar íntimo**, favoreciendo la higiene y protegiéndote de cualquier molestia.</p>
+                <p class="price">$15.600</p>
+                <p><strong>¡No esperes más! Dale a tu cuerpo el cuidado que se merece con los mejores protectores diarios. ¡Siente la diferencia desde el primer uso!</strong></p>
+                
+               
+                 
+
+   <!-- Botón de "Comprar ahora" debajo del carrito -->
+        <a href="tiendajennifer.html" class="buy-now-button">Comprar ahora</a>
+    </div>
+
+        <!-- Video de YouTube -->
+        <iframe src="https://www.youtube.com/embed/MDdTLvrqyo0" title="Protectores Diarios Video" allowfullscreen></iframe>
+
+     
+
+        <a href="tiendajennifer.html" class="back-button">Volver a la tienda</a>
+
+       
+    <a href="https://wa.me/573213211673" target="_blank" class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <footer>
+        <p>&copy; 2025 Turmalina Higiene HGW. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const pricePerUnit = 15600; // Precio del producto
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartList = document.getElementById("cart-items");
+        const totalPriceElement = document.getElementById("total-price");
+
+    
+       
+         
+    </script>
+</body>
+</html>

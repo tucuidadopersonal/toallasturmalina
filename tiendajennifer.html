@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tu tienda de confianza para productos de higiene natural y cuidado personal.">
+    <title>Tu Cuidado Personal</title>
+    <style>
+        /* ========== Estilos Generales ========== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.8;
+        }
+
+ }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+
+        /* ========== Encabezado (Header) ========== */
+        header {
+            background-color: #2a9d8f;
+            color: #ffffff;
+            padding: 20px 10px;;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+        header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+      font-style: italic;
+      opacity: 0.9;
+    }
+ 
+
+        /* Contenedor de navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        /* Estilo de los enlaces de navegación */
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #2a9d8f;
+            transition: background-color 0.3s;
+        }
+
+        nav a.active {
+            background-color: #00bfff;
+        }
+
+        nav a:hover {
+            background-color: #00bfff;
+        }
+
+        /* ========== Contenedor Principal ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* ========== Anuncio Destacado ========== */
+        .announcement {
+            background-color: #ffeb3b;
+            color: #333;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* ========== Sección de Productos ========== */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .product {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            margin: 0.5rem 0;
+        }
+
+        .product p {
+            color: #555;
+        }
+
+        .product .price {
+            color: #4CAF50;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        /* ========== Botón de Más Información (verde) ========== */
+        .product .info-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            border: 2px solid #4CAF50;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .product .info-button:hover {
+            background-color: #45a049;
+            color: white;
+        }
+
+        /* ========== Botón Agregar al Carrito ========== */
+        .product .add-to-cart {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 1rem;
+        }
+
+        .product .add-to-cart:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* ========== Carrito Flotante ========== */
+        #cart {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #ffffff;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 999;
+            max-height: 300px;
+            width: 250px;
+            overflow-y: auto;
+            display: none;
+            transition: right 0.3s ease;
+        }
+
+        #cart h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #cart-items li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        #cart .total-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        #cart .checkout-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #cart .checkout-button:hover {
+            background-color: #45a049;
+        }
+
+     
+ /* Sección de descripción */
+    .description {
+      background-color: #ffffff;
+      padding: 40px;
+      margin: 30px 0;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .description h2 {
+      color: #5a8dee;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .description p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .description ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .description ul li {
+      font-size: 1.1em;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .description ul li::before {
+      content: "✔";
+      color: #5a8dee;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+ /* Imagen */
+    .image-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+        /* ========== Pie de Página (Footer) ========== */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* ========== Estilo para el Botón de Ver Carrito Inferior ========== */
+        .view-cart-button-container {
+            position: fixed;
+            bottom: 30px;
+            left: 20%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .view-cart-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .view-cart-button:hover {
+            background-color: #45a049;
+        }
+
+        /* ========== Carrusel de imágenes del encabezado ========== */
+        .header-image {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .header-image img {
+            width: 100%;
+            height: auto;
+            display: none;
+            transition: opacity 1s ease;
+        }
+
+        .header-image img.active {
+            display: block;
+            opacity: 1;
+        }
+
+  /* Responsividad */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .cta-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+     
+ }
+/* Sección de testimonios */
+    .testimonials {
+      background-color: #ffffff;
+      padding: 50px 40px;
+      margin: 40px 0;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials h2 {
+      color: #5a8dee;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .testimonials p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+  text-align: center; /* Centra el video y el título */
+    }
+
+    .video {
+      width: 48%;
+      max-width: 600px;
+      aspect-ratio: 16/9;
+      background-color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+  }
+        .video-title {
+            font-size: 1.8em;
+            margin-bottom: 10px; /* Espacio entre el título y el video */
+            color: #333; /* Color del título */
+        }
+
+    .video:hover {
+      transform: scale(1.05);
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .video {
+        width: 100%;
+      }
+    }
+
+    /* Estilos adicionales para botones */
+    .testimonial-btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #5a8dee;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .testimonial-btn:hover {
+      background-color: #3b68c0;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- ========== Encabezado ========== -->
+    <header>
+ <img src="images/logo.png" alt="Logo Jabón Turmalina" style="height: 100px; vertical-align: middle; margin-center: 200px;">
+
+
+        <h1>Tu Cuidado Personal</h1>
+        <p>Tu tienda de confianza para productos de higiene natural y cuidado personal.</p>
+        <nav>
+            <a href="#home">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#ofertas">Ofertas</a>
+          
+        </nav>
+    </header>
+
+    <!-- ========== Carrusel de imágenes del encabezado ========== -->
+    <div class="header-image">
+        <img src="images/Encabezado/1.png" alt="Imagen 1" class="active">
+       
+<img src="1.png" alt="Imagen 2">
+<img src="2.png" alt="Imagen 2">
+<img src="3.png" alt="Imagen 2">
+<img src="4.png" alt="Imagen 2">
+    </div>
+
+    <!-- ========== Contenedor Principal ========== -->
+    <div class="container">
+        <!-- Anuncio Destacado -->
+        <div class="announcement">
+            ¡Entregamos a domicilio en todo el país! Consulta disponibilidad y tiempos de entrega.
+        </div>
+
+        <!-- Sección de Productos -->
+        <section class="products">
+            <!-- Producto Individual -->
+            
+                     <div class="product">
+                <img src="images/toalladia.png" alt="Toallas Higiénicas para el uso de dia">
+                <h3>Toallas Higienicas uso noche (Smilife) </h3>
+                <p>Ultrafina / Transpirable / Muy Absorbente / Limpia / Delicada con la piel / 10 Unidades.</p>
+                <p class="price">$12.900</p>
+                <a href="producto-toallasdia2.html" class="info-button" target="_blank">Más Información</a>
+                <button class="add-to-cart" onclick="addToCart('Toallas higiénicas uso de Día', 12900)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product">
+                <img src="images/protectores.png" alt="Protector diario">
+                <h3>Protectores diarios (Smilife)</h3>
+                <p>Ultrafino / Transpirable / Absorbente / Limpio / 30 unidades.</p>
+                <p class="price">$15.500</p>
+                <a href="producto-protector2.html" class="info-button" target="_blank">Más Información</a>
+                <button class="add-to-cart" onclick="addToCart('Protectores diarios', 15500)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product">
+                <img src="images/toallanoche.png" alt="Toalla higiénica noche">
+                <h3>Toallas higiénicas uso de Noche (Smilife)</h3>
+                <p>Ultrafina / Transpirable / Absorbente / Limpia / 8 Unidades.</p>
+                <p class="price">$13.900</p>
+                <a href="producto-toallasnoche2.html" class="info-button" target="_blank">Más Información</a>
+                <button class="add-to-cart" onclick="addToCart('Toallas higiénicas uso de Noche', 13900)">Agregar al Carrito</button>
+            </div>
+
+<div class="product">
+                <img src="images/masproductos.png" alt="Toalla higiénica noche">
+                <h3>Visita nuestra tienda principal HGW</h3>
+                <p>Tu tienda de confianza en tu cuidado Personal</p>
+                <p>ATENCIÓN* Debes registrar tu usuario como Cliente después de realizar tu pedido."</p>
+<p>-*Solo aplica en tienda principal</p>
+
+
+                <a href="tiendajennifer.html" class="info-button" target="_blank">Tienda Principal</a>
+               
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ========== Carrito ========== -->
+    <div id="cart">
+        <h3>Carrito</h3>
+        <ul id="cart-items"></ul>
+        <p id="total-price" class="total-price">Total: $0</p>
+        <a href="checkoutAsesorJennifer.html" class="checkout-button">Ir a la compra</a>
+    </div>
+
+   
+ <section class="description">
+    <h2>Confort y protección en cada momento</h2>
+    <p>
+      Sabemos lo desafiantes que pueden ser esos días del mes, por eso nuestras toallas higiénicas están diseñadas para ser más que un producto, 
+      una verdadera aliada en tu bienestar. Con tecnología avanzada de turmalina, ofrecen una experiencia única que alivia las incomodidades y te devuelve la confianza para enfrentar el día con energía.
+    </p>
+    <ul>
+      <li>Propiedades antibacterianas naturales que protegen tu piel.</li>
+      <li>Neutralización de olores para que te sientas fresca todo el día.</li>
+      <li>Diseño ultradelgado y súper absorbente para máxima comodidad.</li>
+      <li>Materiales suaves y transpirables que cuidan incluso la piel más sensible.</li>
+    </ul>
+    <p>
+      No dejes que los días difíciles te detengan. Vive con libertad, confianza y la seguridad de que estás usando lo mejor en cuidado femenino. 
+      Porque mereces lo mejor, incluso en tus días más desafiantes.
+    </p>
+
+<h2>Que dicen nuestras Clientes</h2>
+
+<div class="image-container">
+      <img src="images/Encabezado/2.png" alt="Toallas Higiénicas de Turmalina">
+    </div>
+
+<title>Video con Contenedor de Título</title>
+
+<div class="video-container">
+      <!-- Video 1 -->
+      <div class="video">
+
+        <iframe src="videos/testimonio1.mp4" 
+                title="Testimonio 1" 
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+        <div class="video-info">
+          <h3>Kely Suarez</h3>
+          <p>"Mis días de menstruación nunca habían sido tan cómodos. Gracias a estas toallas, me siento segura y fresca todo el día."</p>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video">
+        <iframe src="videos/testimonio2.mp4" 
+                title="Testimonio 2" 
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+        <div class="video-info">
+          <h3>En la ciudad de Cali</h3>
+          <p>"Realmente cambiaron mi experiencia durante la menstruación. Ahora me siento protegida y sin preocupaciones."</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+</div>
+
+    <!-- ========== Pie de Página (Footer) ========== -->
+    <footer>
+        <p>&copy; 2025 Turmalina Higiene. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ========== Botón de Ver Carrito Inferior ========== -->
+    <div class="view-cart-button-container">
+        <button class="view-cart-button" onclick="toggleCart()">Ver Carrito</button>
+    </div>
+
+    <script>
+        // Función para el carrusel de imágenes del encabezado
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.header-image img');
+        setInterval(() => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }, 4000);
+
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const cartList = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+
+        function addToCart(productName, productPrice) {
+            const existingItemIndex = cartItems.findIndex(item => item.name === productName);
+
+            if (existingItemIndex !== -1) {
+                cartItems[existingItemIndex].quantity += 1;
+            } else {
+                cartItems.push({
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            updateCart();
+        }
+
+        function updateCart() {
+            cartList.innerHTML = "";
+            let totalPrice = 0;
+
+            cartItems.forEach(item => {
+                totalPrice += item.price * item.quantity;
+                const listItem = document.createElement("li");
+                listItem.textContent = `${item.name} - $${item.price} x${item.quantity}`;
+                cartList.appendChild(listItem);
+            });
+
+            totalPriceElement.textContent = `Total: $${totalPrice.toLocaleString()}`;
+        }
+
+        function toggleCart() {
+            const cart = document.getElementById("cart");
+            cart.style.display = cart.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
